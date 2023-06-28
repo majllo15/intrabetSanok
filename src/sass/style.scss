@@ -56,3 +56,38 @@ table {
 	background-size: 15%;
 	z-index: 100;
 }
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: $yellow;
+	z-index: 10;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: inherit;
+		height: 80px;
+	}
+
+	&__burger-btn {
+		display: block;
+		position: absolute;
+		top: 2.25em;
+		right: 2em;
+		padding: 1em;
+		cursor: pointer;
+	}
+
+	&__item {
+		display: none;
+	}
+}
+
+@import "utilities/sizes";

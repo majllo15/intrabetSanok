@@ -1,0 +1,32 @@
+@media (max-width: 381px) {
+	.navbar {
+		&__logo {
+			img {
+				height: 25px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar {
+		&__list {
+			list-style-type: none;
+			padding-top: 1em;
+		}
+
+		&__burger-btn {
+			display: none;
+		}
+
+		&__item {
+			display: inline-block;
+			a {
+				padding: 1em 2em;
+				font-size: 2.3rem;
+				color: $dark;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
