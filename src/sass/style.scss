@@ -14,7 +14,7 @@ body {
 }
 
 html {
-	font-family: "Open Sans", sans-serif;
+	font-family: $main-font;
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
@@ -93,6 +93,7 @@ table {
 		padding: 1em;
 		font-size: 2.3rem;
 		color: $dark;
+		text-decoration: none;
 		text-transform: uppercase;
 		transition: color 0.3s;
 
@@ -100,7 +101,60 @@ table {
 			color: $lightyellow;
 		}
 	}
+}
 
+.header {
+	position: relative;
+	margin-top: 80px;
+	height: 100%;
+	max-height: 600px;
+
+	&__slider {
+		overflow: hidden;
+	}
+
+	&__slider-box {
+		display: flex;
+		transform: translateX(0);
+		transition: transform 0.5s;
+	}
+
+	&__slider-img {
+		object-fit: cover;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 0.5em 0.8em;
+		color: #fff;
+		background-color: rgba(0, 0, 0, 0.6);
+		font-size: 2rem;
+		border: none;
+		cursor: pointer;
+	}
+
+	&__btn-left {
+		left: 0;
+	}
+
+	&__btn-right {
+		right: 0;
+	}
+
+	&__arrow {
+		display: block;
+		transition: transfrom 0.5s;
+
+		&:hover {
+			transform: scale(0.85);
+		}
+	}
+
+	&__chevron-down {
+		display: none;
+	}
 }
 
 @import "utilities/sizes";

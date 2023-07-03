@@ -1,0 +1,18 @@
+$main-font: "openSans", sans-serif;
+$bold-font: "openSansBold", sans-serif;
+
+@font-face {
+	font-family: "openSans";
+	src: url("/fonts/OpenSans-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "openSansBold";
+	src: url("/fonts/OpenSans-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
