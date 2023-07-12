@@ -17,6 +17,7 @@ html {
 	font-family: $main-font;
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	scroll-padding-top: 90px;
 }
 
 a {
@@ -50,11 +51,48 @@ table {
 
 .preloader {
 	position: fixed;
+	margin-top: -80px;
 	width: 100%;
 	height: 100vh;
 	background: #000 url("/dist/img/loader.gif") no-repeat center center;
 	background-size: 15%;
-	z-index: 100;
+	z-index: 1000;
+}
+
+.cookie-box {
+	position: fixed;
+	bottom: 0;
+	padding: 2em;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+
+	.container {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 5px;
+	}
+
+	&__text {
+		font-size: 1.8rem;
+	}
+
+	&__cookie-btn {
+		padding: 1em 2em;
+		font-size: 1.4em;
+		color: white;
+		background-color: $blue;
+		transition: background-color 0.3s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $lightblue;
+		}
+	}
+}
+
+.hide {
+	display: none;
 }
 
 .navbar {
@@ -62,7 +100,12 @@ table {
 	top: 0;
 	width: 100%;
 	background-color: $yellow;
-	z-index: 10;
+	box-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	z-index: 5;
+
+	.active {
+		color: $lightyellow;
+	}
 
 	&__nav {
 		display: flex;
@@ -108,6 +151,7 @@ table {
 	margin-top: 80px;
 	height: 100%;
 	max-height: 600px;
+	background-color: $lightyellow;
 
 	&__slider {
 		overflow: hidden;
@@ -117,10 +161,6 @@ table {
 		display: flex;
 		transform: translateX(0);
 		transition: transform 0.5s;
-	}
-
-	&__slider-img {
-		object-fit: cover;
 	}
 
 	&__btn {
@@ -155,6 +195,170 @@ table {
 	&__chevron-down {
 		display: none;
 	}
+}
+
+.aboutus {
+	position: relative;
+	background-color: $yellow;
+
+	&__text {
+		font-size: 1.75rem;
+	}
+
+	&__text-box,
+	&__img-box {
+		z-index: 1;
+	}
+
+	&__img {
+		border-radius: 8px;
+		box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+	}
+
+	&__bg-icon-right {
+		display: none;
+	}
+
+	&__bg-icon-left {
+		display: none;
+	}
+}
+
+.offer {
+	position: relative;
+	background-image: url("/dist/img/mini-offer-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	z-index: 1;
+
+	.card-img-top {
+		height: 210px;
+		object-fit: cover;
+	}
+
+	.card-title {
+		font-family: $bold-font;
+		text-align: center;
+	}
+}
+
+.offer::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: -1;
+	content: "";
+}
+
+.counter-box {
+	background-color: $lightyellow;
+
+	&__counter-item {
+		text-align: center;
+	}
+
+	&__counter {
+		font-family: $bold-font;
+		font-size: 2rem;
+	}
+
+	&__text {
+		font-size: 1.6rem;
+	}
+}
+
+.contact {
+	background-color: $yellow;
+
+	&__icons-group {
+		display: flex;
+		justify-content: center;
+		gap: 25px;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+	&__icon-box {
+		padding-left: 1.25em;
+	}
+
+	&__img-box {
+		margin-bottom: 1em;
+	}
+
+	&__social-media,
+	&__phone,
+	&__email {
+		transition: 0.3s;
+		cursor: pointer;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__title {
+		font-family: $bold-font;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		font-size: 1.25em;
+	}
+
+	&__map {
+		width: 100%;
+	}
+}
+
+.footer {
+	position: relative;
+	background-color: $lightyellow;
+
+	&__text {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&__scroll-to-top {
+		display: block;
+		position: absolute;
+		top: 5px;
+		right: 75px;
+		padding: 1em;
+		background: none;
+		transition: transform 0.3s;
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(-6px);
+		}
+	}
+}
+
+.error-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: $lightyellow;
+
+	&__text {
+		font-size: 3rem;
+	}
+}
+
+.footer-error {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: $yellow;
 }
 
 @import "utilities/sizes";

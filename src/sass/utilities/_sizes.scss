@@ -8,6 +8,18 @@
 			transform: translateX(-50%);
 		}
 	}
+
+	.aboutus {
+		position: relative;
+		top: 32px;
+		z-index: -1;
+	}
+
+	.contact {
+		&__icon-box {
+			padding-left: 0;
+		}
+	}
 }
 
 @media (max-width: 381px) {
@@ -24,9 +36,17 @@
 			height: 568px;
 		}
 	}
+
+	.aboutus {
+		margin-top: -32px;
+	}
 }
 
 @media (max-width: 576px) {
+	.preloader {
+		margin-top: 0;
+	}
+
 	.navbar {
 		&__list {
 			width: 100%;
@@ -35,6 +55,24 @@
 		&__logo {
 			margin-left: 0.75em;
 		}
+	}
+
+	.counter-box {
+		&__counter-item:nth-child(2) {
+			padding-top: 1em;
+		}
+	}
+
+	.footer {
+		&__scroll-to-top {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.offer {
+		background-image: url("/dist/img/offer-bg.jpg");
 	}
 }
 
@@ -69,6 +107,28 @@
 		&__link {
 			margin-top: 2em;
 			margin-right: 0.75em;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.aboutus {
+		&__bg-icon-right {
+			display: block;
+			position: absolute;
+			right: 300px;
+			top: 50px;
+			width: 10%;
+			animation: rotate-right 140s infinite linear;
+		}
+
+		&__bg-icon-left {
+			display: block;
+			position: absolute;
+			top: 265px;
+			left: 220px;
+			width: 8%;
+			animation: rotate-left 60s infinite linear;
 		}
 	}
 }
